@@ -22,3 +22,14 @@ User            Password
 user1@test.com  password123
 user2@test.com  password123
 user3@test.com  password123
+
+Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDOVPJqR5aYVz0QPqRCfHVDqlsxN2_763E",
+  authDomain: "campusmarketplace-4f239.firebaseapp.com",
+  projectId: "campusmarketplace-4f239",
+  storageBucket: "campusmarketplace-4f239.firebasestorage.app",
+  messagingSenderId: "142696098168",
+  appId: "1:142696098168:web:1d22a27823d6050ec5808d",
+  measurementId: "G-0Q1TQLT08G"
+};
