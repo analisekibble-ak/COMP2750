@@ -18,10 +18,10 @@ README.txt
 Outline the powerpoint presentation
 
 Firebase Test User Accounts
-User            Password
-user1@test.com  password123
-user2@test.com  password123
-user3@test.com  password123
+User            Password        UserId
+user1@test.com  password123     g7E0ZTnvlpZAQ7ycUoQO5NFuknK2
+user2@test.com  password123     yNszTQyB2adogps1VLjF8DNfxqr1
+user3@test.com  password123     yH7I88tfTbhepzYdG6mTNEGZ6LE2
 
 Firebase Configuration
 const firebaseConfig = {
