@@ -33,3 +33,6 @@ const firebaseConfig = {
   appId: "1:142696098168:web:1d22a27823d6050ec5808d",
   measurementId: "G-0Q1TQLT08G"
 };
+
+Hey guys, I went through and did the code for my sections (shortlist.html and marketplace.html) but to test that they were functional I had to write the code for login.html and index.html. Happy to do it since I just wanted to make sure what I had done was working hahaha
+let me know if you guys want me to change anything or stuff 
