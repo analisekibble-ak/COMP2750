@@ -6,6 +6,8 @@ hello this is analise
 index.html 
 mylistings.html
 Images
+style.css
+app.js
 
 -- Analise --> 
 marketplace.html
@@ -36,3 +38,5 @@ const firebaseConfig = {
 
 Hey guys, I went through and did the code for my sections (shortlist.html and marketplace.html) but to test that they were functional I had to write the code for login.html and index.html. Happy to do it since I just wanted to make sure what I had done was working hahaha
 let me know if you guys want me to change anything or stuff 
+
+Hey analise, it quynh, i have add some code to mylistings.html and will adding some code to the style.css soon
