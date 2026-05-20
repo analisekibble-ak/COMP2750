@@ -3,75 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login | Campus Marketplace</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css" />  ← add this line
+  <title>Sign In | Campus Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --navy: #0f2137; --orange: #ff6b35; --orange-dark: #e5572a; --border: #dde3ee; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: var(--navy);
+      background-image: radial-gradient(ellipse at 15% 60%, rgba(255,107,53,0.15) 0%, transparent 55%),
+                        radial-gradient(ellipse at 85% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+    }
+    .card {
+      background: #fff; border-radius: 18px; padding: 2.75rem 2.25rem;
+      width: 100%; max-width: 420px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .logo {
+      font-family: 'Syne', sans-serif; font-size: 1.7rem; font-weight: 800;
+      color: var(--navy); text-align: center; margin-bottom: 0.25rem;
+    }
+    .logo span { color: var(--orange); }
+    .subtitle { text-align: center; color: #7585a0; font-size: 0.88rem; margin-bottom: 2rem; }
+    label { display: block; font-weight: 600; font-size: 0.875rem; color: var(--navy); margin-bottom: 0.4rem; }
+    input {
+      width: 100%; border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 0.7rem 0.9rem; font-size: 0.95rem; font-family: 'Manrope', sans-serif;
+      background: #f7f9fc; margin-bottom: 1rem; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,107,53,0.15); background: #fff; }
+    .btn {
+      width: 100%; padding: 0.8rem; font-size: 1rem; font-weight: 700;
+      background: var(--orange); border: none; color: #fff; border-radius: 10px;
+      cursor: pointer; font-family: 'Manrope', sans-serif;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s; margin-top: 0.25rem;
+    }
+    .btn:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,107,53,0.3); }
+    .error { color: #d9382a; font-size: 0.85rem; margin-bottom: 0.75rem; display: none; }
+  </style>
 </head>
-<body class="bg-light">
-
-  <div class="container mt-5" style="max-width: 400px;">
-    <div class="card shadow-sm p-4">
-      <h3 class="mb-4 text-center fw-bold">Campus Marketplace</h3>
-      <h5 class="mb-3 text-center text-muted">Sign In</h5>
-
-      <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" id="email" class="form-control" placeholder="Enter your email"/>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" id="password" class="form-control" placeholder="Enter your password"/>
-      </div>
-
-      <p id="errorMessage" class="text-danger small" style="display:none;"></p>
-
-      <button id="loginBtn" class="btn btn-primary w-100">Sign In</button>
-    </div>
+<body>
+  <div class="card">
+    <div class="logo">Campus <span>Market</span></div>
+    <p class="subtitle">Sign in to your student account</p>
+    <label for="email">Email address</label>
+    <input type="email" id="email" placeholder="you@students.mq.edu.au" />
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password" />
+    <p id="errorMessage" class="error"></p>
+    <button id="loginBtn" class="btn">Sign In →</button>
   </div>
 
-  <!-- Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
     const firebaseConfig = {
-  apiKey: "AIzaSyDOVPJqR5aYVz0QPqRCfHVDqlsxN2_763E",
-  authDomain: "campusmarketplace-4f239.firebaseapp.com",
-  projectId: "campusmarketplace-4f239",
-  storageBucket: "campusmarketplace-4f239.firebasestorage.app",
-  messagingSenderId: "142696098168",
-  appId: "1:142696098168:web:1d22a27823d6050ec5808d",
-  measurementId: "G-0Q1TQLT08G"
-};
-
+      apiKey: "AIzaSyDOVPJqR5aYVz0QPqRCfHVDqlsxN2_763E",
+      authDomain: "campusmarketplace-4f239.firebaseapp.com",
+      projectId: "campusmarketplace-4f239",
+      storageBucket: "campusmarketplace-4f239.firebasestorage.app",
+      messagingSenderId: "142696098168",
+      appId: "1:142696098168:web:1d22a27823d6050ec5808d"
+    };
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-
-    // If already signed in redirect to index
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        window.location.href = "index.html";
-      }
-    });
-
-    // Sign in button
+    onAuthStateChanged(auth, (user) => { if (user) window.location.href = "index.html"; });
     document.getElementById("loginBtn").addEventListener("click", async () => {
-      const email = document.getElementById("email").value;
+      const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
-      const errorMessage = document.getElementById("errorMessage");
-
-      errorMessage.style.display = "none";
-
+      const err = document.getElementById("errorMessage");
+      err.style.display = "none";
       try {
         await signInWithEmailAndPassword(auth, email, password);
         window.location.href = "index.html";
-      } catch (error) {
-        errorMessage.textContent = "Invalid email or password. Please try again.";
-        errorMessage.style.display = "block";
+      } catch {
+        err.textContent = "Invalid email or password. Please try again.";
+        err.style.display = "block";
       }
     });
-
+    document.getElementById("password").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") document.getElementById("loginBtn").click();
+    });
   </script>
 </body>
 </html>
