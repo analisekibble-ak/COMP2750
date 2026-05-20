@@ -51,11 +51,12 @@
 
     /* image container — fixed height, image covers it */
     .item-card .img-wrap {
-      width:100%; height:200px; overflow:hidden; background:#f0f0f0;
+      width:100%; height:200px; overflow:hidden; background:#f5f2ee;
       display:flex; align-items:center; justify-content:center;
     }
     .item-card .img-wrap img {
-      width:100%; height:100%; object-fit:cover; object-position:center;
+      width:100%; height:100%; object-fit:contain; object-position:center;
+      background:#f5f2ee;
       display:block; transition:transform 0.3s;
     }
     .item-card:hover .img-wrap img { transform:scale(1.04); }
