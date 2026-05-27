@@ -4,100 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home | Campus Marketplace</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --navy: #0f2137;
-      --orange: #ff6b35;
-      --orange-dark: #e5572a;
-      --bg: #f0f4f9;
-      --card-bg: #ffffff;
-      --muted: #7585a0;
-      --border: #dde3ee;
-    }
-    body { font-family: 'Manrope', sans-serif; background: var(--bg); margin: 0; }
+    :root { --navy:#0f2137; --orange:#ff6b35; --orange-dark:#e5572a; --bg:#f0f4f9; --card:#fff; --muted:#7585a0; --border:#dde3ee; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Times New Roman', Times, serif; background:var(--bg); }
 
-    /* Navbar */
-    .topbar {
-      background: var(--navy);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 62px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-      position: sticky; top: 0; z-index: 99;
-    }
-    .topbar-brand {
-      font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800;
-      color: #fff; letter-spacing: -0.3px;
-    }
-    .topbar-brand span { color: var(--orange); }
-    .btn-signout {
-      background: var(--orange); border: none; color: #fff;
-      font-family: 'Manrope', sans-serif; font-weight: 700;
-      padding: 0.4rem 1.1rem; border-radius: 8px; cursor: pointer;
-      transition: background 0.2s;
-    }
-    .btn-signout:hover { background: var(--orange-dark); }
+    .topbar { background:var(--navy); display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:62px; box-shadow:0 2px 16px rgba(0,0,0,0.2); position:sticky; top:0; z-index:99; }
+    .topbar-brand { font-size:1.4rem; font-weight:bold; color:#fff; letter-spacing:-0.3px; }
+    .topbar-brand span { color:var(--orange); }
+    .btn-signout { background:var(--orange); border:none; color:#fff; font-family:'Times New Roman',Times,serif; font-weight:bold; padding:0.4rem 1.1rem; border-radius:8px; cursor:pointer; font-size:0.95rem; transition:background 0.2s; }
+    .btn-signout:hover { background:var(--orange-dark); }
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
-      color: #fff; padding: 2.5rem 2rem; margin: 2rem auto;
-      max-width: 1100px; border-radius: 18px;
-      position: relative; overflow: hidden;
-    }
-    .hero::after {
-      content: ''; position: absolute; right: -60px; top: -60px;
-      width: 260px; height: 260px;
-      background: radial-gradient(circle, rgba(255,107,53,0.2), transparent 70%);
-      border-radius: 50%;
-    }
-    .hero-chip {
-      display: inline-block; background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
-      padding: 0.2rem 0.85rem; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.6rem;
-    }
-    .hero h2 {
-      font-family: 'Syne', sans-serif; font-size: 1.8rem;
-      font-weight: 800; margin: 0 0 0.25rem;
-    }
-    .hero p { opacity: 0.7; margin: 0; font-size: 0.92rem; }
+    .hero { background:linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%); color:#fff; padding:2.5rem 2rem; margin:2rem auto; max-width:1100px; border-radius:18px; position:relative; overflow:hidden; }
+    .hero::after { content:''; position:absolute; right:-60px; top:-60px; width:260px; height:260px; background:radial-gradient(circle, rgba(255,107,53,0.2), transparent 70%); border-radius:50%; }
+    .hero-chip { display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:0.2rem 0.85rem; font-size:0.9rem; font-style:italic; margin-bottom:0.6rem; }
+    .hero h2 { font-size:1.9rem; font-weight:bold; margin:0 0 0.25rem; }
+    .hero p { opacity:0.75; margin:0; font-size:1rem; font-style:italic; }
 
-    /* Nav cards */
-    .cards-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem; max-width: 1100px; margin: 0 auto 3rem; padding: 0 2rem;
-    }
-    .nav-card {
-      background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: 16px; padding: 1.8rem 1.5rem;
-      display: flex; flex-direction: column; gap: 0.5rem;
-      text-decoration: none; color: inherit;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    }
-    .nav-card:hover {
-      transform: translateY(-5px); border-color: var(--orange);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.1); color: inherit;
-      text-decoration: none;
-    }
-    .nav-card .icon { font-size: 2.2rem; }
-    .nav-card h5 {
-      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.05rem;
-      color: var(--navy); margin: 0;
-    }
-    .nav-card p { font-size: 0.875rem; color: var(--muted); margin: 0; flex: 1; line-height: 1.5; }
-    .nav-card .arrow { color: var(--orange); font-weight: 800; font-size: 1.1rem; margin-top: 0.5rem; }
+    .cards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:1100px; margin:0 auto 3rem; padding:0 2rem; }
+    .nav-card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.8rem 1.5rem; display:flex; flex-direction:column; gap:0.5rem; text-decoration:none; color:inherit; box-shadow:0 2px 10px rgba(0,0,0,0.06); transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .nav-card:hover { transform:translateY(-5px); border-color:var(--orange); box-shadow:0 8px 28px rgba(0,0,0,0.1); color:inherit; text-decoration:none; }
+    .nav-card .icon { font-size:2.2rem; }
+    .nav-card h5 { font-size:1.1rem; font-weight:bold; color:var(--navy); margin:0; }
+    .nav-card p { font-size:0.95rem; color:var(--muted); margin:0; flex:1; line-height:1.6; }
+    .nav-card .arrow { color:var(--orange); font-weight:bold; font-size:1.1rem; margin-top:0.5rem; }
 
-    @media (max-width: 700px) {
-      .cards-grid { grid-template-columns: 1fr; }
-      .hero { margin: 1rem; padding: 1.75rem 1.25rem; }
-    }
+    @media(max-width:700px) { .cards-grid { grid-template-columns:1fr; } .hero { margin:1rem; padding:1.75rem 1.25rem; } }
   </style>
 </head>
 <body>
-
   <nav class="topbar">
     <div class="topbar-brand">Campus <span>Market</span></div>
     <button id="signOutBtn" class="btn-signout">Sign Out</button>

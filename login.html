@@ -4,45 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign In | Campus Marketplace</title>
-   <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root { --navy: #0f2137; --orange: #ff6b35; --orange-dark: #e5572a; --border: #dde3ee; }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2137; --orange:#ff6b35; --orange-dark:#e5572a; --border:#dde3ee; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     body {
-      font-family: 'Manrope', sans-serif;
-      min-height: 100vh; display: flex; align-items: center; justify-content: center;
-      background: var(--navy);
-      background-image: radial-gradient(ellipse at 15% 60%, rgba(255,107,53,0.15) 0%, transparent 55%),
-                        radial-gradient(ellipse at 85% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+      font-family:'Times New Roman', Times, serif;
+      min-height:100vh; display:flex; align-items:center; justify-content:center;
+      background:var(--navy);
+      background-image:radial-gradient(ellipse at 15% 60%, rgba(255,107,53,0.15) 0%, transparent 55%);
     }
     .card {
-      background: #fff; border-radius: 18px; padding: 2.75rem 2.25rem;
-      width: 100%; max-width: 420px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      background:#fff; border-radius:18px; padding:2.75rem 2.25rem;
+      width:100%; max-width:420px; box-shadow:0 20px 60px rgba(0,0,0,0.3);
     }
-    .logo {
-      font-family: 'Syne', sans-serif; font-size: 1.7rem; font-weight: 800;
-      color: var(--navy); text-align: center; margin-bottom: 0.25rem;
-    }
-    .logo span { color: var(--orange); }
-    .subtitle { text-align: center; color: #7585a0; font-size: 0.88rem; margin-bottom: 2rem; }
-    label { display: block; font-weight: 600; font-size: 0.875rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .logo { font-size:1.9rem; font-weight:bold; color:var(--navy); text-align:center; margin-bottom:0.25rem; }
+    .logo span { color:var(--orange); }
+    .subtitle { text-align:center; color:#7585a0; font-size:1rem; margin-bottom:2rem; font-style:italic; }
+    label { display:block; font-weight:bold; font-size:0.95rem; color:var(--navy); margin-bottom:0.4rem; }
     input {
-      width: 100%; border: 1.5px solid var(--border); border-radius: 10px;
-      padding: 0.7rem 0.9rem; font-size: 0.95rem; font-family: 'Manrope', sans-serif;
-      background: #f7f9fc; margin-bottom: 1rem; outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      width:100%; border:1.5px solid var(--border); border-radius:10px;
+      padding:0.7rem 0.9rem; font-size:1rem; font-family:'Times New Roman', Times, serif;
+      background:#f7f9fc; margin-bottom:1rem; outline:none;
+      transition:border-color 0.2s, box-shadow 0.2s;
     }
-    input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,107,53,0.15); background: #fff; }
+    input:focus { border-color:var(--orange); box-shadow:0 0 0 3px rgba(255,107,53,0.15); background:#fff; }
     .btn {
-      width: 100%; padding: 0.8rem; font-size: 1rem; font-weight: 700;
-      background: var(--orange); border: none; color: #fff; border-radius: 10px;
-      cursor: pointer; font-family: 'Manrope', sans-serif;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s; margin-top: 0.25rem;
+      width:100%; padding:0.8rem; font-size:1.05rem; font-weight:bold;
+      background:var(--orange); border:none; color:#fff; border-radius:10px;
+      cursor:pointer; font-family:'Times New Roman', Times, serif;
+      transition:background 0.2s, transform 0.15s, box-shadow 0.2s; margin-top:0.25rem;
     }
-    .btn:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,107,53,0.3); }
-    .error { color: #d9382a; font-size: 0.85rem; margin-bottom: 0.75rem; display: none; }
+    .btn:hover { background:var(--orange-dark); transform:translateY(-1px); box-shadow:0 6px 20px rgba(255,107,53,0.3); }
+    .error { color:#d9382a; font-size:0.9rem; margin-bottom:0.75rem; display:none; }
   </style>
 </head>
 <body>
@@ -54,7 +47,7 @@
     <label for="password">Password</label>
     <input type="password" id="password" placeholder="Enter your password" />
     <p id="errorMessage" class="error"></p>
-    <button id="loginBtn" class="btn">Sign In →</button>
+    <button id="loginBtn" class="btn">Sign In &rarr;</button>
   </div>
 
   <script type="module">

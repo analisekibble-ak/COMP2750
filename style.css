@@ -28,7 +28,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family:'Times New Roman', Times, serif;
   background-color: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -57,7 +57,7 @@ body {
 }
 
 .navbar-brand {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.35rem;
   font-weight: 800;
   color: #fff !important;
@@ -111,7 +111,7 @@ body {
 }
 
 .page-header h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary);
@@ -160,7 +160,7 @@ body {
 }
 
 .item-card-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--primary);
@@ -185,7 +185,7 @@ body {
 }
 
 .item-price {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--accent);
@@ -289,7 +289,7 @@ body {
 }
 
 .login-logo {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--primary);
@@ -376,7 +376,7 @@ body {
 }
 
 .welcome-hero h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.7rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
@@ -429,7 +429,7 @@ body {
 }
 
 .nav-card h5 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--primary);
