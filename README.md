@@ -1,42 +1,59 @@
 # COMP2750
-hello this is quynh 
-hello this is analise
 
--- Quynh --> 
-index.html 
-mylistings.html
-Images
-style.css
-app.js
+# Campus Marketplace
 
--- Analise --> 
-marketplace.html
-shortlist.html 
-Firebase
+A web application built for COMP2750/6750 Assessment 3.
+Built with HTML, CSS, JavaScript, and Firebase.
 
--- Fahmid -->
-login.html
-README.txt
-Outline the powerpoint presentation
+---
 
-Firebase Test User Accounts
-User            Password        UserId
-user1@test.com  password123     g7E0ZTnvlpZAQ7ycUoQO5NFuknK2
-user2@test.com  password123     yNszTQyB2adogps1VLjF8DNfxqr1
-user3@test.com  password123     yH7I88tfTbhepzYdG6mTNEGZ6LE2
+## How to Run
 
-Firebase Configuration
+1. Open the project folder in VS Code
+2. Install the Live Server extension (if not already installed)
+3. Right-click `login.html` and select **Open with Live Server**
+4. The app will open in your browser at `http://127.0.0.1:5500/login.html`
+
+---
+
+## Firebase Configuration
+
+```js
 const firebaseConfig = {
   apiKey: "AIzaSyDOVPJqR5aYVz0QPqRCfHVDqlsxN2_763E",
   authDomain: "campusmarketplace-4f239.firebaseapp.com",
   projectId: "campusmarketplace-4f239",
   storageBucket: "campusmarketplace-4f239.firebasestorage.app",
   messagingSenderId: "142696098168",
-  appId: "1:142696098168:web:1d22a27823d6050ec5808d",
-  measurementId: "G-0Q1TQLT08G"
+  appId: "1:142696098168:web:1d22a27823d6050ec5808d"
 };
+```
 
-Hey guys, I went through and did the code for my sections (shortlist.html and marketplace.html) but to test that they were functional I had to write the code for login.html and index.html. Happy to do it since I just wanted to make sure what I had done was working hahaha
-let me know if you guys want me to change anything or stuff 
+---
 
-Hey analise, it quynh, i have add some code to mylistings.html and will adding some code to the style.css soon
+## Test User Accounts
+
+| Email            | Password    |
+|------------------|-------------|
+| user1@test.com   | password123 |
+| user2@test.com   | password123 |
+| user3@test.com   | password123 |
+
+---
+
+## Project Structure
+├── login.html        # Sign-in page
+├── index.html        # Welcome/home page
+├── marketplace.html  # Browse all items (excludes own)
+├── mylistings.html   # View own listings
+├── shortlist.html    # View and remove shortlisted items
+├── images/           # Item image files
+└── README.md
+
+---
+
+## Group Members
+
+- Quynh — index.html, mylistings.html, style.css, app.js, readme.md
+- Analise — marketplace.html, shortlist.html, images, Firebase setup
+- Fahmid — login.html, README, presentation slides
